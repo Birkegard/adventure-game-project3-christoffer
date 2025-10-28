@@ -1,4 +1,4 @@
-package se.sprinto.hakan.adventuregame.model;
+package se.iths.christoffer.adventuregame.model;
 
 public class Statistics {
     private String playerName;
