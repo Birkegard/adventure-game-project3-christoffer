@@ -10,12 +10,12 @@ public class TreasureRoom implements Room {
 
         String choice = ui.getInput("Vill du försöka öppna kistan? (ja/nej)");
         if (choice.equalsIgnoreCase("ja")) {
-            if (player.hasFoundKey()) {
-                ui.showMessage("Du öppnar kistan med din nyckel!");
+            if (player.hasFoundKey() && player.hasFoundDiamond()) {
+                ui.showMessage("Du öppnar kistan med din nyckel och har din diamant!");
                 player.setOpenedChest(true);
                 player.addScore(100);
             } else {
-                ui.showMessage("Kistan är låst, du saknar nyckeln...");
+                ui.showMessage("Kistan är låst, du saknar nyckeln eller diamanten...");
             }
         } else {
             ui.showMessage("Du lämnar kistan orörd.");

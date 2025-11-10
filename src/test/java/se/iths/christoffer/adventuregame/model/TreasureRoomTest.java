@@ -9,6 +9,8 @@ class TreasureRoomTest {
 
     @Test
     void enterRoom() {
+        TreasureRoom treasureRoom = new TreasureRoom();
+        ForestRoom forestRoom = new ForestRoom();
         FakeUi fakeUi = new FakeUi();
         fakeUi.setInput("ja");
 
@@ -18,9 +20,6 @@ class TreasureRoomTest {
                 .score(0)
                 .strength(10)
                 .build();
-
-        TreasureRoom treasureRoom = new TreasureRoom();
-        ForestRoom forestRoom = new ForestRoom();
 
         forestRoom.enterRoom(player, fakeUi);
         treasureRoom.enterRoom(player, fakeUi);

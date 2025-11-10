@@ -4,11 +4,14 @@ public class Player extends AbstractCharacter {
     private boolean foundKey;
     private boolean defeatedEnemy;
     private boolean openedChest;
+    private boolean foundDiamond;
+    private boolean foundHammer;
 
     private String name;
     private int health;
     private int score;
     private int strength;
+    private int absorb;
 
     private Player(Builder builder) {
         super(builder.name, builder.health, builder.score, builder.strength);
@@ -26,7 +29,6 @@ public class Player extends AbstractCharacter {
         return defeatedEnemy;
     }
 
-
     public void setDefeatedEnemy(boolean defeatedEnemy) {
         this.defeatedEnemy = defeatedEnemy;
     }
@@ -39,8 +41,24 @@ public class Player extends AbstractCharacter {
         this.openedChest = openedChest;
     }
 
+    public boolean hasFoundDiamond() {
+        return foundDiamond;
+    }
+
+    public void setFoundDiamond(boolean foundDiamond){
+        this.foundDiamond=foundDiamond;
+    }
+
+    public boolean hasFoundHammer() {
+        return foundHammer;
+    }
+
+    public void setFoundHammer(boolean foundHammer){
+        this.foundHammer = foundHammer;
+    }
+
     public boolean hasWon() {
-        return foundKey && defeatedEnemy && openedChest;
+        return foundKey && defeatedEnemy && openedChest && foundDiamond;
     }
 
     @Override
