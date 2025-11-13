@@ -11,8 +11,14 @@ class TreasureRoomTest {
     void enterRoom() {
         TreasureRoom treasureRoom = new TreasureRoom();
         ForestRoom forestRoom = new ForestRoom();
+        TowerRoom towerRoom = new TowerRoom();
+
         FakeUi fakeUi = new FakeUi();
-        fakeUi.setInput("ja");
+        FakeUi fakeUiForest = new FakeUi();
+        FakeUi fakeUiTreasure = new FakeUi();
+        fakeUi.setInput("a");
+        fakeUiForest.setInput("ja");
+        fakeUiTreasure.setInput("ja");
 
         Player player = new Player.Builder()
                 .name("Christoffer")
@@ -21,10 +27,18 @@ class TreasureRoomTest {
                 .strength(10)
                 .build();
 
-        forestRoom.enterRoom(player, fakeUi);
-        treasureRoom.enterRoom(player, fakeUi);
+        Enemy2 knightArmour = new Enemy2("Rustning", 50, 0, 20);
 
-        Assertions.assertTrue(player.hasFoundKey(), "Om ja");
-        Assertions.assertTrue(player.hasOpenedChest(), "Om ja, har öppnat kistan.");
+        towerRoom.enterRoom(player, fakeUi);
+        player.attack(knightArmour);
+
+
+        forestRoom.enterRoom(player, fakeUiForest);
+        player.setFoundDiamond(true);
+        treasureRoom.enterRoom(player, fakeUiTreasure);
+
+        Assertions.assertTrue(player.hasFoundDiamond(), "Har hittat diamanten om true.");
+        Assertions.assertTrue(player.hasFoundKey(), "Om ja, har hittat nyckeln.");
+        Assertions.assertTrue(player.hasOpenedChest(), "Om ja, har inte hittat diamanten.");
     }
 }

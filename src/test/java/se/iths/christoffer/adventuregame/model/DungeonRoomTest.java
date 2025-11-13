@@ -22,7 +22,7 @@ class DungeonRoomTest {
         dungeonRoom.enterRoom(player, fakeUi);
 
 
-        Assertions.assertTrue(player.hasDefeatedEnemy(), "Ska döda om ja");
+        Assertions.assertTrue(player.hasDefeatedEnemy(), "Sant om du slår fienden.");
 
     }
 }

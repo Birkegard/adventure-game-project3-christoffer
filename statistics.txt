@@ -12,3 +12,4 @@ Chrippa;270
 Chriss;270
 CB;270
 Cassandra;120
+Chris;270

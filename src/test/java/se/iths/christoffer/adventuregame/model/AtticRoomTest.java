@@ -29,7 +29,7 @@ class AtticRoomTest {
     @Test
     void enterRoom() {
         atticRoom.enterRoom(player, fakeUi);
-        Assertions.assertTrue(player.hasDefeatedEnemy(), "Ska dö om ja");
+        Assertions.assertTrue(player.hasDefeatedEnemy(), "Om ja, fienden dör.");
     }
 
     @Test

@@ -30,6 +30,6 @@ class DiningRoomTest {
     void enterRoom() {
         diningRoom.enterRoom(player, fakeUi);
 
-        Assertions.assertTrue(player.hasFoundHammer(), "Om ja");
+        Assertions.assertTrue(player.hasFoundHammer(), "Sant om du har hammaren.");
     }
 }

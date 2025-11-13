@@ -9,7 +9,7 @@ public class DiningRoom implements Room {
         ui.showMessage("När du drar ut en låda hittar du en gryningshammare.");
         String choice = ui.getInput("Vill du ta med och använda hammaren? (ja/nej)");
         if (choice.equalsIgnoreCase("ja")) {
-            ui.showMessage("Du tar upp hammare!");
+            ui.showMessage("Du tar upp hammaren och din styrka ökar med 40!");
             player.setFoundHammer(true);
             player.setStrength(50);
         } else {

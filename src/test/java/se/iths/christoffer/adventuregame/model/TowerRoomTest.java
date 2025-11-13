@@ -10,7 +10,7 @@ class TowerRoomTest {
     private Player player;
     private FakeUi fakeUi;
     private TowerRoom towerRoom;
-    private Enemy knightArmour;
+    private Enemy2 knightArmour;
 
     @BeforeEach
     public void setUp(){
@@ -21,7 +21,7 @@ class TowerRoomTest {
                 .strength(50)
                 .build();
 
-        knightArmour = new Enemy("Rustning", 50, 0, 20);
+        knightArmour = new Enemy2("Rustning", 50, 0, 20);
         fakeUi = new FakeUi();
         fakeUi.setInput("a");
         towerRoom = new TowerRoom();
